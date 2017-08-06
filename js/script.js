@@ -35,7 +35,10 @@ $(document).ready(function(){
 					if($('input[name="purchasePrice"]').val().length > 0){
 						purchasePrice = $('input[name="purchasePrice"]').val().replace(/,/g , "");
 						purchasePrice = Number(purchasePrice);
-						$('input[name="purchasePrice"]').val(formatCurrency(purchasePrice));
+						
+						if(!isNaN(purchasePrice)){
+							$('input[name="purchasePrice"]').val(formatCurrency(purchasePrice));
+						}
 					}
 					
 					if($('input[name="downPaymentPercent"]').val().length > 0){
